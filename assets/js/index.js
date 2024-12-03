@@ -29,3 +29,15 @@ const passing_input = document.querySelector('label[for="passing"]');
 const dribbling_input = document.querySelector('label[for="dribbling"]');
 const defending_input = document.querySelector('label[for="defending"]');
 const physical_input = document.querySelector('label[for="physical"]');
+
+
+let sum;
+
+let dataArray = null
+let editIndex = null
+let currentPosition = null;
+let isAllPlayersSectionOpen = false
+let isFilteredPlayerSectionOpen = false
+let new_player_card
+
+
