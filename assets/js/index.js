@@ -299,6 +299,42 @@ function DisplayCardCentered(element, index) {
     document.body.appendChild(overlay);
 }
 
+function editPlayer(index) {
+    const player = dataArray[index];
+    
+    document.getElementById("name").value = player.name;
+    document.getElementById("nationality").value = player.nationality;
+    document.getElementById("club").value = player.club;
+
+    document.getElementById("position").value = player.position;
+    updateLabel();
+    document.getElementById("photo").value=player.photo;
+    document.getElementById("flag").value=player.flag;
+    document.getElementById("logo").value=player.logo;
+    document.getElementById("rating").value = player.rating;
+
+    if (player.position !== "GK") {
+        document.getElementById("pace").value = player.pace;
+        document.getElementById("shooting").value = player.shooting;
+        document.getElementById("passing").value = player.passing;
+        document.getElementById("dribbling").value = player.dribbling;
+        document.getElementById("defending").value = player.defending;
+        document.getElementById("physical").value = player.physical;
+    } else {
+        document.getElementById("pace").value = player.diving;
+        document.getElementById("shooting").value = player.handling;
+        document.getElementById("passing").value = player.kicking;
+        document.getElementById("dribbling").value = player.reflexes;
+        document.getElementById("defending").value = player.speed;
+        document.getElementById("physical").value = player.positioning;
+    }
+
+    save_button_form.innerText = "Save Edits";
+}
+
+
+
+
 
 
 
