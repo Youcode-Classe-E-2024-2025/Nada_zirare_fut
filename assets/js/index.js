@@ -490,5 +490,40 @@ positions.forEach(position => {
 
 
 
+function updateOpenCloseSection() {
+    if (isAllPlayersSectionOpen) {
+
+        see_all_players_section.classList.remove("hidden");
+        filtered_players_section.classList.add("hidden");
+        isFilteredPlayerSectionOpen = false
+
+    } else if (isFilteredPlayerSectionOpen) {
+
+        filtered_players_section.classList.remove("hidden");
+        see_all_players_section.classList.add("hidden");
+       
+        isAllPlayersSectionOpen = false
+
+    } 
+  
+     else {
+
+        see_all_players_section.classList.add("hidden");
+        filtered_players_section.classList.add("hidden");
+        
+        isAllPlayersSectionOpen = false
+        isFilteredPlayerSectionOpen = false
+      
+
+    }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+    getData()
+    emptyCardButton()
+    updateOpenCloseSection()
+    
+})
+
 
 
