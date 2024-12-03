@@ -12,3 +12,20 @@ const form = document.getElementById("form")
 const save_button_form = document.getElementById("save-player-button")
 const clear_player_card = document.getElementById("empty-card")
 const clear_all_cards_button = document.getElementById("clear-cards");
+
+
+
+// Basic Information
+const photo_input = document.getElementById("photo");
+const position_input = document.getElementById("position");
+const flag_input = document.getElementById("flag");
+const logo_input = document.getElementById("logo");
+
+// Ratings and Stats
+const rating_input = document.getElementById("rating");
+const pace_input = document.querySelector('label[for="pace"]');
+const shooting_input =  document.querySelector('label[for="shooting"]');
+const passing_input = document.querySelector('label[for="passing"]');
+const dribbling_input = document.querySelector('label[for="dribbling"]');
+const defending_input = document.querySelector('label[for="defending"]');
+const physical_input = document.querySelector('label[for="physical"]');
