@@ -191,6 +191,15 @@ form.addEventListener("submit", e => {
     add_player_form.style.display = "none"; // Cacher après l'enregistrement
 });
 
+// Afficher le formulaire lorsqu'on clique sur "Add Player"
+add_player_button.addEventListener("click", () => {
+    add_player_form.style.display = "block";
+    form.reset(); // Réinitialiser les champs pour un nouvel ajout
+    editIndex = null; // S'assurer qu'on n'est pas en mode édition
+    save_button_form.innerText = "Add Player"; // Ajuster le texte
+});
+
+
 
 
 
