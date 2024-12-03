@@ -459,7 +459,7 @@ function emptyCardButton() {
             placeholder_card.classList.remove('flex');
             placeholder_card.classList.add('hidden');
             
-            // Extract position from the ID
+            // Extract position from the ID --placeholder prsq moi jai nommé les id comme ca
             const position = placeholder_card.id.replace('-placeholder', '').toUpperCase();
             const textLabel = document.querySelector(`.${position}-TEXT`);
             if (textLabel) textLabel.classList.remove('hidden');
