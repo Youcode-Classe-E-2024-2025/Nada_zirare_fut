@@ -88,3 +88,109 @@ form_layover.addEventListener("click",()=>{
 })
 
 form.addEventListener("click",e => e.stopPropagation())
+
+
+
+function updateLabel(){
+    if(position_input.value == "GK"){
+        pace_input.innerText = "Diving"
+        shooting_input.innerText = "Handling"
+        passing_input.innerText = "Kicking"
+        dribbling_input.innerText = "Reflexes"
+        defending_input.innerText = "Speed"
+        physical_input.innerText = "Positioning"
+    }else{
+        pace_input.innerText = "Pace"
+        shooting_input.innerText = "Shooting"
+        passing_input.innerText = "Passing"
+        dribbling_input.innerText = "Dribbling"
+        defending_input.innerText = "Defending"
+        physical_input.innerText = "Physical"
+    }
+}
+
+
+position_input.addEventListener("change",updateLabel)
+form.addEventListener("submit", e => {
+    e.preventDefault();// stop reload page
+    // console.log('teeeeeeeeeeeeeeeeeeest');
+
+    const name_input = document.getElementById("name").value.trim();
+    const nationality_input = document.getElementById("nationality").value.trim();
+    const club_input = document.getElementById("club").value.trim();
+
+    // const flg = document.getElementById("flag").value;
+    
+    const has_Numbers_Or_Special_Chars = /[^A-Za-z\s]/;
+    const name_test = has_Numbers_Or_Special_Chars.test(name_input);
+    const club_test = has_Numbers_Or_Special_Chars.test(club_input);
+    const nationality_test = has_Numbers_Or_Special_Chars.test(nationality_input);
+
+    const has_only_one_word = /^\w+$/;
+    const nationality_one_word_test = has_only_one_word.test(nationality_input);
+
+    if (!nationality_one_word_test) {
+        alert("Nationality should be one word");
+        return;
+    }
+
+    if (name_test || club_test || nationality_test) {
+        alert("name, club, or nationality should not contain numbers or special characters.");
+        return;
+    }
+
+    let new_player_card;
+    if (position_input.value === "GK") {
+        new_player_card = {
+            name: name_input,
+            photo: photo_input.value,
+            position: position_input.value,
+            nationality: nationality_input,
+            flag:flag_input.value,
+            club: club_input.value,
+            logo: logo_input.value,
+            rating: rating_input.value,
+            diving: document.getElementById("pace").value,
+            handling: document.getElementById("shooting").value,
+            kicking: document.getElementById("passing").value,
+            reflexes: document.getElementById("dribbling").value,
+            speed: document.getElementById("defending").value,
+            positioning: document.getElementById("physical").value,
+        };
+    } else {
+        new_player_card = {
+            name: name_input,
+            photo: photo_input.value,
+            position: position_input.value,
+            nationality: nationality_input,
+            flag: flag_input.value,
+            club: club_input.value,
+            logo: logo_input.value,
+            rating: rating_input.value,
+            pace: document.getElementById("pace").value,
+            shooting: document.getElementById("shooting").value,
+            passing: document.getElementById("passing").value,
+            dribbling: document.getElementById("dribbling").value,
+            defending: document.getElementById("defending").value,
+            physical: document.getElementById("physical").value,
+        };
+
+        console.log("playerrrrrr : ", new_player_card);
+        
+    }
+
+    if (editIndex !== null) {
+        dataArray[editIndex] = new_player_card;
+        editIndex = null;
+        save_button_form.innerText = "Save Player";
+    } else {
+        dataArray.push(new_player_card);
+    }
+    displayPlayers();
+    form.reset();
+    add_player_form.style.display = "none"; // Cacher après l'enregistrement
+});
+
+
+
+
