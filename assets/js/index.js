@@ -229,6 +229,76 @@ function displayPlayers(){
 
 }
 
+function DisplayCardCentered(element, index) {
+    const overlay = document.createElement("div");
+    overlay.classList.add(
+        "fixed", "inset-0", "bg-black", "bg-opacity-50", "z-50", 
+        "flex", "items-center", "justify-center", "p-4"
+    );
+
+    const container = document.createElement("div");
+    container.classList.add("flex", "items-center", "space-x-4");
+
+    const enlarged_card_div = document.createElement("div");
+    enlarged_card_div.classList.add(
+        "relative", "text-light_orange-500", "text-[8px]", 
+        "transform", "scale-150", "origin-center"
+    );
+    enlarged_card_div.innerHTML = `
+        <img src="assets/images/Player/Player_card.png" alt="Player Card" class="w-[90px] h-auto">
+        <img class="w-14 h-14 absolute left-7 top-4" src="${element.photo}" alt="">
+        <img class="w-2 h-2 absolute left-5 top-1/3" src="${element.flag}">
+        <p class="position absolute left-[19px] font-bold top-3">${element.name} </p>
+        <p class="position absolute left-[18px] font-bold  top-7">${element.position}</p>
+        <p class="rating absolute left-5 top-[50px] font-bold ">${element.rating} </p>
+        <p class="shooting absolute left-4 top-[78px]">${element.position == "GK" ? "DIV" : "SHO"} :<span>${element.position == "GK" ? element.diving : element.shooting} </span></p>
+        <p class="pace absolute left-4 top-24">${element.position == "GK" ? "HAN :" : "PAC : "}<span>${element.position == "GK" ? element.handling : element.pace} </span></p>
+        <p class="passing absolute left-4 top-[87px]">${element.position == "GK" ? "KIC : " : "PAS : "}<span>${element.position == "GK" ? element.kicking : element.passing} </span></p>
+        <p class="dribbling absolute left-12 top-[78px]">${element.position == "GK" ? "REF :" : "DRI : "}<span>${element.position == "GK" ? element.reflexes : element.dribbling} </span></p>
+        <p class="defending absolute left-12 top-24">${element.position == "GK" ? "SPD : " : "DEF : "}<span>${element.position == "GK" ? element.speed : element.defending} </span></p>
+        <p class="physical absolute left-12 top-[87px]">${element.position == "GK" ? "POS : " : "PHY : "}<span>${element.position == "GK" ? element.positioning : element.physical} </span></p>
+    `;
+
+    const buttons_div = document.createElement("div");
+    buttons_div.classList.add("flex", "flex-col", "space-y-2");
+
+    const edit_button = document.createElement("button");
+    edit_button.textContent = "Edit";
+    edit_button.classList.add("bg-yellow-500", "text-white", "px-4", "py-2", "rounded","hover:bg-yellow-600", "transition", "duration-300");
+    edit_button.addEventListener("click", () => {
+        add_player_form.style.display="block";
+        document.body.removeChild(overlay);
+        editIndex = index
+        editPlayer(editIndex)
+    });
+
+    const delete_button = document.createElement("button");
+    delete_button.textContent = "Delete";
+    delete_button.classList.add("bg-red-500", "text-white", "px-4", "py-2", "rounded","hover:bg-red-600", "transition", "duration-300");
+    
+    delete_button.addEventListener("click",() => {
+        dataArray.splice(index, 1);
+        document.body.removeChild(overlay);
+        displayPlayers()
+    });
+
+    buttons_div.appendChild(edit_button);
+    buttons_div.appendChild(delete_button);
+
+    container.appendChild(enlarged_card_div);
+    container.appendChild(buttons_div);
+
+    overlay.appendChild(container);
+
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            document.body.removeChild(overlay);
+        }
+    });
+
+    document.body.appendChild(overlay);
+}
+
 
 
 
