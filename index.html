@@ -27,9 +27,10 @@
 
   <main class="flex justify-around mt-12 flex-wrap lg:flex-nowrap flex-grow">
     <section id="field" class="relative">
-      <!-- terrain background Image -->
+      <!-- Field Image -->
       <img src="assets/images/Fields/pngwing.com.png" alt="football field" class="w-full max-w-[800px]">
-    <!-- Player Cards -->
+    
+      <!-- Player Cards -->
       <!-- ST -->
       <div class="LST absolute top-[0%] left-[40%] transform -translate-x-1/2 text-center">
         <!-- LST CARD -->
@@ -47,7 +48,6 @@
         </div>
       </div>
       <p class="LST-TEXT text-sm absolute top-[15%] left-[35%] bg-light_orange-500 px-2 rounded-lg inline-block 680:hidden">ST</p>
-     
 
       <div class="RST absolute top-[0%] left-[60%] transform -translate-x-1/2 text-center">
         <!-- RST CARD -->
@@ -65,9 +65,7 @@
         </div>
       </div>
       <p class="RST-TEXT text-sm absolute top-[15%] left-[60%] bg-light_orange-500 px-2 rounded-lg inline-block 680:hidden">ST</p>
-
-
-
+      
       <!-- LWM, CM, RM, RWM -->
       <div class="LWM absolute top-[20%] lg:top-[15%] left-[25%] transform -translate-x-1/2 text-center">
         <!-- LWM CARD -->
@@ -86,8 +84,6 @@
       </div>
       <p class="LWM-TEXT text-sm absolute top-[35%] left-[25%] bg-light_orange-500 px-2 rounded-lg inline-block 680:hidden">LWM</p>
 
-
-      
       <div class="LCM absolute top-[30%] lg:top-[20%] left-[40%] transform -translate-x-1/2 text-center">
         <!-- LCM CARD -->
         <div id="lcm-placeholder" class="relative  items-center justify-center font-bold text-light_orange-500 hover:scale-150 hidden 680:flex">
@@ -104,7 +100,6 @@
         </div>
       </div>
       <p class="LCM-TEXT text-sm absolute top-[45%] 475:top-[40%] left-[35%] bg-light_orange-500 px-2 rounded-lg inline-block 680:hidden">CM</p>
-
 
       <div class="RCM absolute top-[30%] lg:top-[20%] left-[60%] transform -translate-x-1/2 text-center">
         <!-- RCM CARD -->
@@ -140,8 +135,8 @@
       </div>
       <p class="RWM-TEXT text-sm absolute top-[35%] left-[68%] bg-light_orange-500 px-2 rounded-lg inline-block 680:hidden">RWM</p>
     
-       <!-- LWB, CB, RB, RWB -->
-       <div class="LWB absolute top-[45%] lg:top-[35%] left-[20%] transform -translate-x-1/2 text-center">
+      <!-- LWB, CB, RB, RWB -->
+      <div class="LWB absolute top-[45%] lg:top-[35%] left-[20%] transform -translate-x-1/2 text-center">
         <!-- LWB CARD -->
         <div id="lwb-placeholder" class="relative  items-center justify-center font-bold text-light_orange-500 hover:scale-150 hidden 680:flex">
           <img src="assets/images/Player/Player_card.png" alt="Player Card" class="w-[90px]  h-auto">
@@ -158,8 +153,6 @@
       </div>
       <p class="LWB-TEXT text-sm absolute top-[55%] left-[23%] bg-light_orange-500 px-2 rounded-lg inline-block 680:hidden ">LWB</p>
 
-
-      
       <div class="LCB absolute top-[50%] lg:top-[40%] left-[35%] transform -translate-x-1/2 text-center">
         <!-- LCB CARD -->
         <div id="lcb-placeholder" class="relative  items-center justify-center font-bold text-light_orange-500 hover:scale-150 hidden 680:flex">
@@ -210,8 +203,7 @@
         </div>
       </div>
       <p class="RWB-TEXT text-sm absolute top-[55%] left-[70%] bg-light_orange-500 px-2 rounded-lg inline-block 680:hidden">RWB</p>
- 
-
+    
       <!-- GK -->
       <div class="GK absolute bottom-[17%] lg:bottom-[16%] left-[50%] transform -translate-x-1/2 text-center">
         <!-- GK CARD -->
@@ -230,46 +222,51 @@
       </div>
       <p class="GK-TEXT text-sm absolute bottom-[7%] left-[45%] 425:left-[47%] bg-light_orange-500 px-2 rounded-lg inline-block 680:hidden">GK</p>
       
-
-
     </section>
+
+    
+       
+
     <section id="info" class="flex flex-col gap-4 w-96">
       <!-- CLEAR CARDS BUTTON  -->
-      <button id="clear-cards" class="bg-denim-100 text-white p-4 w-full transform active:scale-90 transition duration-150">Vider le terrain </button>
+      <button id="clear-cards" class="bg-denim-100 text-white p-4 w-full transform active:scale-90 transition duration-150">Remove All Players</button>
       
- <!-- ADD / SEE ALL PLAYERS  -->
- <div class="add-player flex py-4 px-2 justify-between shadow-md ">
-  <p id="all-players" class="underline cursor-pointer hover:text-light_orange-400  text-white">Voir listes des joueurs</p>
-  <div class="flex gap-2">
-    <p class="text-white">Ajouter joueur</p>
-    <button id="add-player" class="hover:scale-105  w-6 h-6 cursor-pointer transform active:scale-90 transition duration-150">
-      <img src="assets/images/default_images/addimg.png" alt="">
-    </button>
-  </div>
-</div>
+      
+      <!-- ADD / SEE ALL PLAYERS  -->
+      <div class="add-player flex py-4 px-2 justify-between shadow-md ">
+        <p id="all-players" class="underline cursor-pointer hover:text-light_orange-400  text-white">See All Players</p>
+        <div class="flex gap-2">
+          <p class="text-white">Add Player</p>
+          <button id="add-player" class="hover:scale-105  w-6 h-6 cursor-pointer transform active:scale-90 transition duration-150">
+            <img src="assets/images/default_images/addimg.png" alt="">
+          </button>
+        </div>
+      </div>
 
- <!-- PLAYERS FILTERED  -->
- <section id="players-filtered" class="flex-col hidden">
-  <div class="flex justify-between items-center">
-    <p class="mb-4">Choose a Player</p>
-    <button id="empty-card" class="bg-denim-100 text-white p-2 transform active:scale-90 transition duration-150">Clear Card</button>
-  </div>
-  <div class="players flex flex-wrap justify-center h-[250px] overflow-y-auto">
-    <!-- PLAYERS FILTERED HERE  -->
-  </div>
-</section>
+     
 
- <!-- SEE ALL PLAYERS  -->
- <section id="all-players-section" class="flex-col hidden">
-  <p class="mb-4">Choose a Player</p>
-    <div class="see-all-players flex flex-wrap justify-center max-h-[250px] overflow-y-auto">
-      <!-- SEE ALL PLAYERS HERE  -->
-  </div>
-</section>
+      <!-- PLAYERS FILTERED  -->
+      <section id="players-filtered" class="flex-col hidden">
+        <div class="flex justify-between items-center">
+          <p class="mb-4">Choose a Player</p>
+          <button id="empty-card" class="bg-denim-100 text-white p-2 transform active:scale-90 transition duration-150">Clear Card</button>
+        </div>
+        <div class="players flex flex-wrap justify-center h-[250px] overflow-y-auto">
+          <!-- PLAYERS FILTERED HERE  -->
+        </div>
+      </section>
 
+      <!-- SEE ALL PLAYERS  -->
+      <section id="all-players-section" class="flex-col hidden">
+        <p class="mb-4">Choose </p>
+          <div class="see-all-players flex flex-wrap justify-center max-h-[250px] overflow-y-auto">
+            <!-- SEE ALL PLAYERS HERE  -->
+        </div>
+      </section>
     </section>
-     <!-- FORM SECTION -->
-     <section id="add-player-form" class="hidden">
+
+    <!-- FORM SECTION -->
+    <section id="add-player-form" class="hidden">
       <div id="formumaireAll" class="layover fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
         <div class="bg-white w-[350px] sm:w-[500px] p-4 rounded-lg shadow-lg relative">
           <button id="close-form" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900">
@@ -278,36 +275,39 @@
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-          <div>
-            <label for="name" class="block text-xs font-medium">Name</label>
-            <input type="text" id="name" class="border border-gray-300 text-xs py-1 px-2 w-full rounded" placeholder="Name" required>
-          </div>
-          <div>
-            <label for="photo" class="block text-xs font-medium">Photo</label>
-            <input type="url" id="photo" class="border border-gray-300 text-xs py-1 px-2 w-full rounded" required>
-          </div>
-          <div>
-            <label for="position" class="block text-xs font-medium">Position</label>
-            <select id="position" class="border border-gray-300 text-xs py-1 px-2 w-full rounded" required>
-              <option value="" disabled selected>Position</option>
-              <option value="LST">LST</option>
-              <option value="RST">RST</option>
-              <option value="LWM">LWM</option>
-              <option value="LCM">LCM</option>
-              <option value="RCM">RCM</option>
-              <option value="RWM">RWM</option>
-              <option value="LWB">LWB</option>
-              <option value="LCB">LCB</option>
-              <option value="RCB">RCB</option>
-              <option value="RWB">RWB</option>
-              <option value="GK">GK</option>
-            </select>
-          </div> 
-          <div>
-            <label for="nationality" class="block text-xs font-medium">Nationality</label>
-            <input type="text" id="nationality" class="border border-gray-300 text-xs py-1 px-2 w-full rounded" placeholder="Nationality" maxlength="10" required>
-          </div>
-          div>
+          <form id="form" class="space-y-4">
+            <h2 class="text-lg font-semibold text-center">ADD PLAYER</h2>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label for="name" class="block text-xs font-medium">Name</label>
+                <input type="text" id="name" class="border border-gray-300 text-xs py-1 px-2 w-full rounded" placeholder="Name" required>
+              </div>
+              <div>
+                <label for="photo" class="block text-xs font-medium">Photo</label>
+                <input type="url" id="photo" class="border border-gray-300 text-xs py-1 px-2 w-full rounded" required>
+              </div>
+              <div>
+                <label for="position" class="block text-xs font-medium">Position</label>
+                <select id="position" class="border border-gray-300 text-xs py-1 px-2 w-full rounded" required>
+                  <option value="" disabled selected>Position</option>
+                  <option value="LST">LST</option>
+                  <option value="RST">RST</option>
+                  <option value="LWM">LWM</option>
+                  <option value="LCM">LCM</option>
+                  <option value="RCM">RCM</option>
+                  <option value="RWM">RWM</option>
+                  <option value="LWB">LWB</option>
+                  <option value="LCB">LCB</option>
+                  <option value="RCB">RCB</option>
+                  <option value="RWB">RWB</option>
+                  <option value="GK">GK</option>
+                </select>
+              </div>
+              <div>
+                <label for="nationality" class="block text-xs font-medium">Nationality</label>
+                <input type="text" id="nationality" class="border border-gray-300 text-xs py-1 px-2 w-full rounded" placeholder="Nationality" maxlength="10" required>
+              </div>
+              <div>
                 <label for="flag" class="block text-xs font-medium">Flag</label>
                 <input type="url" id="flag" class="border border-gray-300 text-xs py-1 px-2 w-full rounded" required>
               </div>
@@ -357,14 +357,6 @@
         </div>
       </div>
     </section>
-
-
-
-
-
-
-
-
     
   </main>
   
