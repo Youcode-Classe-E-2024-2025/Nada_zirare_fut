@@ -59,3 +59,32 @@ async function getData(){
 }
 
 
+
+//pour l'affichage des joueurs
+
+see_all_players_button.addEventListener("click",()=>{
+    if(isAllPlayersSectionOpen == false){
+        see_all_players_section.classList.remove("hidden")
+        see_all_players_section.classList.add("flex")
+        isAllPlayersSectionOpen = true
+        displayPlayers()
+    }else{
+        see_all_players_section.classList.remove("flex")
+        see_all_players_section.classList.add("hidden")
+        isAllPlayersSectionOpen = false
+    }
+    updateOpenCloseSection()
+
+})
+
+add_player_button.addEventListener("click",()=>{
+    add_player_form.classList.remove("hidden");
+})
+close_form_button.addEventListener("click",()=>{
+    add_player_form.style.display="none";
+})
+form_layover.addEventListener("click",()=>{
+    add_player_form.classList.add("hidden")
+})
+
+form.addEventListener("click",e => e.stopPropagation())
