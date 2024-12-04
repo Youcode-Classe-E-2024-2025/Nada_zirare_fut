@@ -242,7 +242,7 @@ function displayPlayers(){
     });
 
 }
-
+//visualiser lelement avec un overlay com bagrond
 function DisplayCardCentered(element, index) {
     const overlay = document.createElement("div");
     overlay.classList.add(
