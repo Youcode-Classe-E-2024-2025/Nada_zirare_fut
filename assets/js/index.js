@@ -191,15 +191,16 @@ form.addEventListener("submit", e => {
         
     }
 //Mise à jour  du joueur
-    if (editIndex !== null) {// si existe 
-        dataArray[editIndex] = new_player_card;
-        editIndex = null;
-        save_button_form.innerText = "Save Player";
+//edit index un indice dans le tableau dataArray qui représente l'emplacement du joueur à modifier
+    if (editIndex !== null) {// si nest pas nul 
+        dataArray[editIndex] = new_player_card; //objet du newplayer
+        editIndex = null;//apres modif reset le index
+        save_button_form.innerText = "Save Player";//changer le texte de bouton
     } else {
         dataArray.push(new_player_card);
     }
-    displayPlayers();
-    form.reset();
+    displayPlayers();//Affichage des joueurs
+    form.reset();//éinitialisation du formulaiire
     add_player_form.style.display = "none"; // Cacher après l'enregistrement
 });
 
@@ -218,7 +219,7 @@ function displayPlayers(){
     dataArray.forEach((element, index) => {
         const div = document.createElement("div")
         div.classList.add("relative", "text-light_orange-500", "text-[8px]", "cursor-pointer")
-
+//relative cad paraport au doc non pas le parent
         div.innerHTML = `
             <img src="assets/images/Player/Player_card.png" alt="Player Card" class="w-[90px] h-auto">
             <img class="w-14 h-14 absolute left-7 top-4" src="${element.photo}" alt="">
@@ -233,6 +234,7 @@ function displayPlayers(){
             <p class="defending absolute left-12 top-24">${element.position == "GK" ? "SPD : " : "DEF : "}<span>${element.position == "GK" ? element.speed : element.defending} </span></p>
             <p class="physical absolute left-12 top-[87px]">${element.position == "GK" ? "POS : " : "PHY : "}<span>${element.position == "GK" ? element.positioning : element.physical} </span></p>
         `
+        //je clique sur carte sur terrain
         div.addEventListener("click",()=>{
             DisplayCardCentered(element,index);
         })
