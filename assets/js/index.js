@@ -285,7 +285,7 @@ function DisplayCardCentered(element, index) {
         editIndex = index
         editPlayer(editIndex)
     });
-
+//btn suprimer
     const delete_button = document.createElement("button");
     delete_button.textContent = "Delete";
     delete_button.classList.add("bg-red-500", "text-white", "px-4", "py-2", "rounded","hover:bg-red-600", "transition", "duration-300");
@@ -312,7 +312,7 @@ function DisplayCardCentered(element, index) {
 
     document.body.appendChild(overlay);
 }
-
+//edit
 function editPlayer(index) {
     const player = dataArray[index];
     
@@ -348,11 +348,12 @@ function editPlayer(index) {
 
 
 
-
+//filtrerles joueurd dependant du clik du position
 
 function getPlayersByPosition(position) {
     return dataArray.filter(player => player.position === position);
 }
+//emplit dynamiquement une section d'affichage de joueurs en fonction de leur position
 
 function populatePlayersSection(targetPosition) {
     const players_container = filtered_players_section.querySelector(".players");
@@ -421,7 +422,7 @@ function populatePlayersSection(targetPosition) {
     isFilteredPlayerSectionOpen = true
     updateOpenCloseSection()
 }
-
+//fnct vider
 function emptyCardButton() {
 
     clear_player_card.addEventListener('click', () => {
@@ -455,6 +456,7 @@ function emptyCardButton() {
 
     clear_all_cards_button.addEventListener('click', () => {
         // Find all placeholder cards
+        //Mise à jour du contenu des cartes de remplacement :
         const placeholderCards = document.querySelectorAll('[id$="-placeholder"]');
         
         placeholderCards.forEach(placeholder_card => {
