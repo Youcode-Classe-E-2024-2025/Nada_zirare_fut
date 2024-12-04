@@ -1,7 +1,7 @@
 const see_all_players_section = document.getElementById("all-players-section")
 const filtered_players_section = document.getElementById("players-filtered");
 
-const FormAll=document.getElementById('formumaireAll')
+const FormAll=document.getElementById('formulaireAll')
 const see_all_players_button = document.getElementById("all-players")
 const see_all_players = document.querySelector(".see-all-players")
 const add_player_button = document.getElementById("add-player")
@@ -119,7 +119,7 @@ form.addEventListener("submit", e => {
     const nationality_input = document.getElementById("nationality").value.trim();
     const club_input = document.getElementById("club").value.trim();
 
-    // const flg = document.getElementById("flag").value;
+    
     
     const has_Numbers_Or_Special_Chars = /[^A-Za-z\s]/;
     const name_test = has_Numbers_Or_Special_Chars.test(name_input);
