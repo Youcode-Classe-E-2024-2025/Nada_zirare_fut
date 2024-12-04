@@ -505,7 +505,7 @@ positions.forEach(position => {
 });
 
 
-
+//La fonction updateOpenCloseSection() gère l'affichage et le masquage de deux sections de l'interface utilisateur : la section "Voir tous les joueurs" (see_all_players_section) et la section "Joueurs filtrés" (filtered_players_section)
 function updateOpenCloseSection() {
     if (isAllPlayersSectionOpen) {
 
@@ -533,6 +533,7 @@ function updateOpenCloseSection() {
 
     }
 }
+//Cela garantit que les données sont chargées, les boutons fonctionnels et l'interface prête à interagir avec l'utilisateur dès que possible.
 
 document.addEventListener("DOMContentLoaded",()=>{
     getData()
