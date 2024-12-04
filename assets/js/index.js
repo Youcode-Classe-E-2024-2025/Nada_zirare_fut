@@ -32,7 +32,7 @@ const physical_input = document.querySelector('label[for="physical"]');
 
 
 let sum;
-
+// on va lais utilisé aprés 
 let dataArray = null
 let editIndex = null
 let currentPosition = null;
@@ -60,7 +60,7 @@ async function getData(){
 
 
 
-//pour l'affichage des joueurs
+//pour l'affichage des joueurs et le masquage des joueure lors du cli
 
 see_all_players_button.addEventListener("click",()=>{
     if(isAllPlayersSectionOpen == false){
@@ -76,20 +76,25 @@ see_all_players_button.addEventListener("click",()=>{
     updateOpenCloseSection()
 
 })
-
+//event liste pouer boton ajjouter player
 add_player_button.addEventListener("click",()=>{
     add_player_form.classList.remove("hidden");
 })
+
+
+//event liste pouer boton fermer formulaire
 close_form_button.addEventListener("click",()=>{
     add_player_form.style.display="none";
 })
+
+//écran qui apparaît derrière le formulaire
 form_layover.addEventListener("click",()=>{
     add_player_form.classList.add("hidden")
 })
-
+// l'événement de clic pourrait également se propager et être capté par le fond deriere le formulaire. 
 form.addEventListener("click",e => e.stopPropagation())
 
-
+//mettre à jour labels des statistiques des joueurs en fonction de leur position (GK) ou non.
 
 function updateLabel(){
     if(position_input.value == "GK"){
@@ -109,23 +114,28 @@ function updateLabel(){
     }
 }
 
-
+//chaque fois que l'utilisateur modifie la valeur de cet élément, la fonction updateLabel sera exécutée.
 position_input.addEventListener("change",updateLabel)
+
+
+
+//écoute l'événement submit sur le formulaire et effectue des actions lorsque l'utilisateur soumet ce formulaire
 form.addEventListener("submit", e => {
-    e.preventDefault();// stop reload page
+    e.preventDefault();// stop reload paaaage
     // console.log('teeeeeeeeeeeeeeeeeeest');
 
+
+// recuperation donnees ecrit
     const name_input = document.getElementById("name").value.trim();
     const nationality_input = document.getElementById("nationality").value.trim();
     const club_input = document.getElementById("club").value.trim();
 
-    
-    
+    //validation des input  des caractères invalide
     const has_Numbers_Or_Special_Chars = /[^A-Za-z\s]/;
     const name_test = has_Numbers_Or_Special_Chars.test(name_input);
     const club_test = has_Numbers_Or_Special_Chars.test(club_input);
     const nationality_test = has_Numbers_Or_Special_Chars.test(nationality_input);
-
+//Vérification si la nationalité contient un seul mot 
     const has_only_one_word = /^\w+$/;
     const nationality_one_word_test = has_only_one_word.test(nationality_input);
 
@@ -138,6 +148,8 @@ form.addEventListener("submit", e => {
         alert("name, club, or nationality should not contain numbers or special characters.");
         return;
     }
+
+//Création d'un objet new player
 
     let new_player_card;
     if (position_input.value === "GK") {
@@ -178,8 +190,8 @@ form.addEventListener("submit", e => {
         console.log("playerrrrrr : ", new_player_card);
         
     }
-
-    if (editIndex !== null) {
+//Mise à jour  du joueur
+    if (editIndex !== null) {// si existe 
         dataArray[editIndex] = new_player_card;
         editIndex = null;
         save_button_form.innerText = "Save Player";
